@@ -1,3 +1,14 @@
+<?php
+
+function GetAgeOfPerson($birthDay) {
+	$birthDay = new DateTime($birthDay);
+	$today = new Datetime(date('m.d.y'));
+	$diff = $today->diff($birthDay);
+	return $diff->y;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="sl">
 <head>
@@ -244,7 +255,7 @@
 							<div class="col col-d-6 col-t-6 col-m-12 border-line-v">
 								<div class="info-list">
 									<ul>
-										<li><strong>Starost . . . . .</strong> 19</li>
+										<li><strong>Starost . . . . .</strong> <?php echo GetAgeOfPerson("22.7.2001"); ?></li>
 										<li><strong>Status . . . . .</strong> študent</li>
 										<!--li><strong>Izpit . . . . .</strong> B kategorija</li-->
 										<li><strong>Državljanstvo . . . . .</strong> Slovenija</li>
